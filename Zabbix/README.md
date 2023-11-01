@@ -26,18 +26,18 @@
 
 ![img1](12/1q.png)
 Текст использованных команд:
-apt install postgresql
-apt update
-wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4+ubuntu22.04_all.deb
-dpkg -i zabbix-release_6.0-4+ubuntu22.04_all.deb
-apt update
-apt install zabbix-server-pgsql zabbix-frontend-php php8.1-pgsql zabbix-apache-conf zabbix-sql-scripts
-sudo -u postgres createuser --pwprompt zabbix
-sudo -u postgres createdb -O zabbix zabbix
-zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix
-sed -i 's/# DBPassword=/DBPassword=123456789/g' /etc/zabbix/zabbix_server.conf
-systemctl restart zabbix-server zabbix-agent apache2
-systemctl enable zabbix-server zabbix-agent apache2
+1. apt install postgresql
+2. apt update
+3. wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4+ubuntu22.04_all.deb
+4. dpkg -i zabbix-release_6.0-4+ubuntu22.04_all.deb
+5. apt update
+6. apt install zabbix-server-pgsql zabbix-frontend-php php8.1-pgsql zabbix-apache-conf zabbix-sql-scripts
+7. sudo -u postgres createuser --pwprompt zabbix
+8. sudo -u postgres createdb -O zabbix zabbix
+9. zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix
+10. sed -i 's/# DBPassword=/DBPassword=123456789/g' /etc/zabbix/zabbix_server.conf
+11. systemctl restart zabbix-server zabbix-agent apache2
+12. systemctl enable zabbix-server zabbix-agent apache2
 
 
 ### Задание 2
@@ -46,16 +46,16 @@ systemctl enable zabbix-server zabbix-agent apache2
 ![img3](12/3q.png)
 ![img4](12/4q.png)
 Текст использованных команд:
-wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4+ubuntu22.04_all.deb
-dpkg -i zabbix-release_6.0-4+ubuntu22.04_all.deb
-apt update
-apt install zabbix-agent
-systemctl restart zabbix-agent
-systemctl enable zabbix-agent
-find / -name zabbix_agentd.conf
-nano /etc/zabbix/zabbix_agentd.conf
-tail -f /var/log/zabbix/zabbix_agentd.log
-systemctl restart zabbix-agent.service
-systemctl status zabbix-agent.service
+1. wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4+ubuntu22.04_all.deb
+2. dpkg -i zabbix-release_6.0-4+ubuntu22.04_all.deb
+3. apt update
+4. apt install zabbix-agent
+5. systemctl restart zabbix-agent
+6. systemctl enable zabbix-agent
+7. find / -name zabbix_agentd.conf
+8. nano /etc/zabbix/zabbix_agentd.conf
+9. tail -f /var/log/zabbix/zabbix_agentd.log
+10. systemctl restart zabbix-agent.service
+11. systemctl status zabbix-agent.service
 
 
