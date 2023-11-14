@@ -24,17 +24,21 @@
 
 ### Задание 1
 
+[Файл pkt](https://github.com/UshkevichVA/gitlab-hw/blob/main/Disaster_recovery_Keepalived/13/hsrp_advanced1.pkt)
 ![img1](13/1v.png)
 
 
 ### Задание 2
 
-""bash
+Bash скрипт:
+#!/bin/bash
 if [[ $(netstat -tuln | grep LISTEN | grep :80) ]] && [[ -f /var/www/html/index.nginx-debian.html ]]; then
         exit 0
 else
         sudo systemctl stop keepalived
 fi
+[Конфигурационный файл keepalived](https://github.com/UshkevichVA/gitlab-hw/blob/main/Disaster_recovery_Keepalived/13/keepalived.conf)
+
 
 ![img2](13/2v.png)
 ![img3](13/3v.png)
