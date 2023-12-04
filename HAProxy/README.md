@@ -24,13 +24,13 @@
 
 ### Задание 1
 
-[haproxy.cfg](haproxy1.cfg)
+[haproxy.cfg](https://github.com/UshkevichVA/gitlab-hw/blob/main/HAProxy/1324/haproxy1.cfg)
 ![img1](1324/1j.png)
 ![img2](1324/2j.png)
 
 
 ### Задание 2
 
-[haproxy.cfg](haproxy2.cfg)
+[haproxy.cfg](https://github.com/UshkevichVA/gitlab-hw/blob/main/HAProxy/1324/haproxy2.cfg)
 ![img3](1324/3j.png)
 ![img4](1324/4j.png)
