@@ -39,3 +39,22 @@
 Для оптимизации запроса можно переписать его, используя явные операторы JOIN, что обычно делает запрос более понятным и улучшает его производительность за счет использования правильного порядка объединения таблиц.
 ![img4](122/4y.png)
 ![img5](122/5y.png)
+
+### Доработка
+
+Создал индекс с помощью команды CREATE INDEX idx_payment_date ON payment (payment_date);
+Переписал условие WHERE для payment_date:
+
+
+'EXPLAIN ANALYZE SELECT DISTINCT CONCAT(c.last_name, ' ', c.first_name), SUM(p.amount) OVER (PARTITION BY c.customer_id, f.title) 
+FROM payment p 
+JOIN rental r ON p.payment_date = r.rental_date 
+JOIN customer c ON r.customer_id = c.customer_id 
+JOIN inventory i ON i.inventory_id = r.inventory_id 
+JOIN film f ON i.film_id = f.film_id 
+WHERE p.payment_date >= '2005-07-30' AND p.payment_date < DATE_ADD('2005-07-30', INTERVAL 1 DAY);'
+
+Cкриншоты explain analyze после изменений:
+
+![img6](122/6y.png)
+![img7](122/7y.png)
