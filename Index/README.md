@@ -54,7 +54,7 @@ JOIN customer c ON r.customer_id = c.customer_id
 JOIN inventory i ON i.inventory_id = r.inventory_id 
 JOIN film f ON i.film_id = f.film_id 
 WHERE p.payment_date >= '2005-07-30' AND p.payment_date < DATE_ADD('2005-07-30', INTERVAL 1 DAY);
-
+'''
 
 Cкриншоты explain analyze после изменений:
 
